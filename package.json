@@ -1,0 +1,22 @@
+{
+  "name": "worldcup2018",
+  "version": "1.0.0",
+  "description": "FIFA World Cup 2018 REST API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'Error: no test specified' && exit 1",
+  },
+  "author": "birand koray eren",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "node-fetch": "^2.1.2",
+    "whatwg-fetch": "^2.0.4"
+  },
+  "engines" : {
+    "node" : "8.11.1"
+  }
+}
