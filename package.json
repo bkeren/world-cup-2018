@@ -4,7 +4,7 @@
   "description": "FIFA World Cup 2018 REST API",
   "main": "index.js",
   "scripts": {
-    "test": "echo 'Error: no test specified' && exit 1",
+    "test": "echo 'Error: no test specified' && exit 1"
   },
   "author": "birand koray eren",
   "license": "ISC",
