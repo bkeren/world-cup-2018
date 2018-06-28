@@ -13,10 +13,29 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.results);
     const groups = this.state.results.map( (res , index) =>
-        <div key={index}>{res.group}</div>
-      );
+    {
+
+      const groupResults = res.results;
+
+
+      const elGroupResults = groupResults.map ((result , elIndex) => {
+         let [home , away] = Object.keys(result);
+
+
+         return (<div>
+           <img alt="" src={`icons/${home}.png`}/>
+           <img alt="" src={`icons/${away}.png`}/>
+         </div>)
+
+      })
+
+      return (<div key={index}>
+        {elGroupResults}
+      </div>)
+    }
+
+    );
     return (
       <div className="App">
         {groups}
