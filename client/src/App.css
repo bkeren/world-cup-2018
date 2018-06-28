@@ -29,4 +29,49 @@
 
 img {
   width: 64px;
+    flex-grow:0;
+    flex-shrink:0;
+
+}
+
+.home , .away , .score {
+  display: inline-block;
+  -ms-align-items: center;
+  align-items: center;
+}
+
+
+
+.score {
+  font-size: 28px;
+}
+
+.home-icon {
+  float: right;
+}
+
+.away-icon {
+  float: left;
+}
+
+
+.result {
+  display: flex;
+  flex-wrap: wrap;
+  -ms-align-items: center;
+  align-items: center;
+}
+.result > div {
+  margin: 10px -2px 10px 10px;
+  text-align: right;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+.home > span , .away > span {
+  font-size: 19px;
+}
+
+.homet {
+  min-width: 200px;
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import {COUNTRIES} from './data/countries';
 
 class App extends Component {
 
@@ -23,9 +24,23 @@ class App extends Component {
          let [home , away] = Object.keys(result);
 
 
-         return (<div>
-           <img alt="" src={`icons/${home}.png`}/>
-           <img alt="" src={`icons/${away}.png`}/>
+         return (<div className="result">
+           <div className="homet">
+             <span>{COUNTRIES[home].toUpperCase()}</span>
+           </div>
+           <div className="home">
+               <img className="home-icon" alt="" src={`icons/${home}.png`}/>
+           </div>
+           <div className="score">
+              <span>{result[home]} - {result[away]}</span>
+           </div>
+           <div className="away">
+               <img className="away-icon" alt="" src={`icons/${away}.png`}/>
+           </div>
+           <div className="awayt">
+             <span>{COUNTRIES[away].toUpperCase()}</span>
+           </div>
+
          </div>)
 
       })
@@ -37,7 +52,7 @@ class App extends Component {
 
     );
     return (
-      <div className="App">
+      <div>
         {groups}
       </div>
     );
