@@ -14,5 +14,13 @@ export const COUNTRIES = {
   "ARG" : "Argentina",
   "NIG" : "Nigeria",
   "CRO" : "Croatia",
-  "ICE" : "ICELAND"
+  "ICE" : "ICELAND",
+  "GER" : "germany",
+  "MEX" : "mexico",
+  "SWE" : "sweden",
+  "KOR" : "korea",
+  "COS" : "costa rica",
+  "SER" : "serbia",
+  "BRA" : "brazil",
+  "SWI" : "switzerland"
 }
