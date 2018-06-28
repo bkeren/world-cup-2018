@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "dusha_plusregular";
+  src:url("/fonts/dusha.ttf");
+  font-weight: normal;
+}
+/* Dusha_-_FIFA_World_Cup_2018 */
 * {
   box-sizing: border-box;
 }

@@ -45,6 +45,8 @@ img {
 .score {
   font-size: 28px;
   font-weight: bold;
+  min-width: 75px;
+  text-align: center;
 }
 
 .home-icon {
@@ -63,7 +65,7 @@ img {
   align-items: center;
 }
 .result > div {
-  margin: 10px -2px 10px 10px;
+
   text-align: right;
   line-height: 75px;
   font-size: 30px;
@@ -75,4 +77,12 @@ img {
 
 .homet {
   min-width: 200px;
+}
+
+.home {
+  margin: 10px 9px 10px 9px;
+}
+.away {
+  margin-left: 21px;
+  margin-right: 9px;
 }
