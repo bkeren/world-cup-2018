@@ -66,7 +66,6 @@ img {
 }
 .result > div {
 
-  text-align: right;
   line-height: 75px;
   font-size: 30px;
 }
@@ -77,6 +76,11 @@ img {
 
 .homet {
   min-width: 200px;
+  text-align: right;
+}
+
+.awayt {
+  text-align: left
 }
 
 .home {
