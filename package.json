@@ -8,6 +8,7 @@
     "start": "node server.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
+  
   "author": "birand koray eren",
   "license": "ISC",
   "devDependencies": {
