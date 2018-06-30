@@ -34,8 +34,7 @@ class App extends Component {
             <img className="home-icon" alt="" src={`icons/${home}.png`}/>
           </div>
           <div className="score">
-            <span>{result[home]}
-              - {result[away]}</span>
+            <span>{result[home]} - {result[away]}</span>
           </div>
           <div className="away">
             <img className="away-icon" alt="" src={`icons/${away}.png`}/>

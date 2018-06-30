@@ -22,5 +22,13 @@ export const COUNTRIES = {
   "COS" : "costa Rica",
   "SER" : "serbia",
   "BRA" : "brazil",
-  "SWI" : "switzerland"
+  "SWI" : "switzerland",
+  "ENG" : "england",
+  "PAN" : "panama",
+  "BEL" : "belgium",
+  "TUN" : "tunisia",
+  "COL" : "colombia",
+  "JAP" : "japan",
+  "SEN" : "senegal",
+  "POL" : "poland"
 }

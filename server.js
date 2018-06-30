@@ -1,5 +1,6 @@
 const fetch = require('node-fetch');
 const path = require('path');
+const fs = require('fs');
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 5000;
@@ -11,9 +12,9 @@ const routes = app => {
   app.route('/wc18')
      .get( (req , res) => {
        fetch('https://s3-us-west-2.amazonaws.com/fifaworldcup2018rest/wc18.json')
-       .then((response => response.json()))
-       .then(json => res.json(json))
-       .catch((ex) => console.log('parsing failed' , ex))
+        .then((response => response.json()))
+        .then(json => res.json(json))
+        .catch((ex) => console.log('parsing failed' , ex))
      });
 
   app.route('/').get((req , res) => {
