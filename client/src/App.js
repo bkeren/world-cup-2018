@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import './App.css';
-import {COUNTRIES} from './data/countries';
+import Score from './score/Score';
+
 
 class App extends Component {
 
@@ -20,36 +20,7 @@ class App extends Component {
 
   render() {
     const groups = this.state.results.map((res, index) => {
-
-      const groupResults = res.results;
-
-      const elGroupResults = groupResults.map((result, elIndex) => {
-        let [home, away] = Object.keys(result);
-
-        return (<div className="result">
-          <div className="homet">
-            <span>{this.capitalize(COUNTRIES[home])}</span>
-          </div>
-          <div className="home">
-            <img className="home-icon" alt="" src={`icons/${home}.png`}/>
-          </div>
-          <div className="score">
-            <span>{result[home]} - {result[away]}</span>
-          </div>
-          <div className="away">
-            <img className="away-icon" alt="" src={`icons/${away}.png`}/>
-          </div>
-          <div className="awayt">
-            <span>{this.capitalize(COUNTRIES[away])}</span>
-          </div>
-
-        </div>)
-
-      })
-
-      return (<div key={index}>
-        {elGroupResults}
-      </div>)
+      return <Score key={index} groupResults={res.results}></Score>
     });
     return (<div>
       {groups}
