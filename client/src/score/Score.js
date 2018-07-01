@@ -4,17 +4,13 @@ import {COUNTRIES} from '../data/countries';
 
 class Score extends Component {
 
-  state = {
-    indexCtr: 0
-  }
-
   capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
   }
 
   render() {
 
-    const elGroupResults = this.props.groupResults.map((result, elIndex) => {
+    const elGroupResults = this.props.results.map((result, elIndex) => {
       let [home, away] = Object.keys(result);
       return (<div className="result">
         <div className="homet">

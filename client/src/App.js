@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Score from './score/Score';
+import Group from './group/Group';
 
 
 class App extends Component {
@@ -10,17 +10,15 @@ class App extends Component {
 
   componentDidMount() {
     fetch('/wc18').then(res => res.json()).then(x => {
+      x.results.sort((a,b) => a.group > b.group);
       this.setState({results: x.results})
     });
 
   }
-  capitalize(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1)
-  }
 
   render() {
     const groups = this.state.results.map((res, index) => {
-      return <Score key={index} groupResults={res.results}></Score>
+      return <Group key={index} groupInfo={res}></Group>
     });
     return (<div>
       {groups}
