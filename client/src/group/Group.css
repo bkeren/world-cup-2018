@@ -5,16 +5,31 @@
     padding: 18px;
     width: 100%;
     border: none;
-    text-align: left;
+    text-align: center;
     outline: none;
     font-size: 30px;
     transition: 0.4s;
     font-family: inherit;
 }
 
-.icon{
-	color: #777;
+i {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
 	font-weight: bold;
 	float: right;
 	margin-left: 5px;
+
+}
+
+.up {
+  -webkit-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+.down {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
