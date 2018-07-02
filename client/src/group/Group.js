@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import './Group.css';
 import Score from '../score/Score';
-
+import './Group.css';
 class Group extends Component {
+
 
   state = {
     expandPanel : false
@@ -13,9 +13,14 @@ class Group extends Component {
   }
 
   render() {
+
+
+
+
     return (<div style={{paddingBottom: '40px'}}>
       <button className="accordion" onClick={() => this.togglePanel()}>
         {'Group ' + this.props.groupInfo.group}
+        <span className="icon">{this.state.expandPanel ? '-' : '+'}</span>
       </button>
       <div style={{display: this.state.expandPanel ? 'flex' : 'none' }}>
         <Score results={this.props.groupInfo.results}/>
