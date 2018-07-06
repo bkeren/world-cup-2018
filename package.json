@@ -21,7 +21,6 @@
     "rimraf": "^2.6.2",
     "serve-static": "^1.13.2",
     "shelljs": "^0.8.2",
-    "webpack": "^4.15.1",
     "whatwg-fetch": "^2.0.4",
     "extract-text-webpack-plugin": "^3.0.0",
     "autoprefixer": "^7.1.2",
@@ -61,6 +60,7 @@
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",
+    "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
     "webpack-merge": "^4.1.0"
