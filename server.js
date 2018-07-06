@@ -6,7 +6,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(express.static(path.join(__dirname , 'client/build')));
-app.use(express.static(path.join(__dirname , 'public')));
+app.use(express.static('public'));
 
 const routes = app => {
   app.route('/wc18')

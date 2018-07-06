@@ -17,14 +17,14 @@ class Score extends Component {
           <span>{this.capitalize(COUNTRIES[home])}</span>
         </div>
         <div className="home">
-          <img className="home-icon" alt="" src={`icons/${home}.png`}/>
+          <img className="home-icon" alt="" src={`http://localhost:5000/icons/${home}.png`}/>
         </div>
         <div className="score">
           <span>{result[home]}
             - {result[away]}</span>
         </div>
         <div className="away">
-          <img className="away-icon" alt="" src={`icons/${away}.png`}/>
+          <img className="away-icon" alt="" src={`http://localhost:5000/icons/${away}.png`}/>
         </div>
         <div className="awayt">
           <span>{this.capitalize(COUNTRIES[away])}</span>
