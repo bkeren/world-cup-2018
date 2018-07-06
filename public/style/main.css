@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "dusha_plusregular";
+  src:url("/fonts/dusha.ttf");
+  font-weight: normal;
+}
+
+body {
+  font-size:20px;
+  font-family: "dusha_plusregular"
+}
+
+a {
+  text-decoration: none;
+  background-color: white;
+  color: red;
+}
+
+a:hover {
+  background-color: red;
+  color: white;
+}
+
+ul > li {
+  list-style: none;
+}
+
+.link {
+  text-align: center;
+  width: 100%;
+  padding-bottom: 20px;
+  margin-top:30px;
+  padding-top:20px;
+}

@@ -16,7 +16,7 @@ class Group extends Component {
 
     return (<div style={{paddingBottom: '40px'}}>
       <button className="accordion" onClick={() => this.togglePanel()}>
-        {'Group ' + this.props.groupInfo.group}
+        {'GROUP ' + this.props.groupInfo.group}
       </button>
       <div style={{display: this.state.expandPanel ? 'grid' : 'none' , justifyContent: 'center' }}>
         <Score results={this.props.groupInfo.results}/>
