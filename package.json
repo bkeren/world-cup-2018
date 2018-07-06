@@ -14,10 +14,14 @@
     "nodemon": "^1.17.5"
   },
   "dependencies": {
+    "chalk": "^2.4.1",
     "express": "^4.16.3",
     "node-fetch": "^2.1.2",
+    "ora": "^2.1.0",
+    "rimraf": "^2.6.2",
     "serve-static": "^1.13.2",
     "shelljs": "^0.8.2",
+    "webpack": "^4.15.1",
     "whatwg-fetch": "^2.0.4"
   },
   "engines": {
