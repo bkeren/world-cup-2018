@@ -1,28 +1,29 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <Match/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import Match from './components/Match'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Match
   }
 }
 </script>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
