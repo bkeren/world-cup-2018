@@ -1,91 +1,78 @@
 <template>
-  <div class="match">
-    <div>
-      <div class="flag">
-        <img src="https://aqueous-spire-90124.herokuapp.com/icons/RUS.png">
-      </div>
-      <div class="name">
-        RUSSIA
-      </div>
-      <div class="score">
-        0
-      </div>
-    </div>
-    <div>
-      <div class="flag">
-        <img src="https://aqueous-spire-90124.herokuapp.com/icons/SPA.png">
-      </div>
-      <div class="name">
-        SPAIN
-      </div>
-      <div class="score">
-        0
-      </div>
-    </div>
-    <div>
-
-    </div>
-  </div>
-
+<div>
+  <li class="spacer">&nbsp;</li>
+  <li class="game game-top" v-bind:class="{winner: winner() === home}">
+    <img :src="getImgUrl(home)" :alt="home"> {{name(home)}}
+    <span v-if="!havePenalties">{{homeScore}}</span>
+    <span v-for="score in getArray(homeScore)">{{score}}</span>
+  </li>
+  <li class="game game-spacer">&nbsp;</li>
+  <li class="game game-bottom" v-bind:class="{winner: winner() === away}">
+    <img :src="getImgUrl(away)" :alt="away"> {{name(away)}}
+    <span v-if="!havePenalties">{{awayScore}}</span>
+    <span v-for="score in getArray(awayScore)">{{score}}</span>
+  </li>
+</div>
 </template>
-
 <script>
-  /* eslint-disable indent */
+/* eslint-disable indent */
+import {
+  KO
+} from '../data/data';
+import {
+  COUNTRIES
+} from '../data/countries';
+export default {
+  name: 'Match',
+  props: ['title', 'item'],
+  data: function() {
+    const keys = Object.keys(this._props.item);
 
-  export default {
-    name: 'Match',
-    data: function () {
-     return {
-        msg: 'Match'
-      }
+    const homeScore = this._props.item[keys[1]];
+
+    const awayScore = this._props.item[keys[2]];
+
+    return {
+      count: 0,
+      home: keys[1],
+      away: keys[2],
+      homeScore: homeScore,
+      awayScore: awayScore,
+      havePenalties: typeof(homeScore) === 'object',
+
     }
+  },
+  methods: {
+    winner() {
+      if(typeof(this.homeScore) === 'number')
+        return this.homeScore > this.awayScore ? this.home : this.away
+
+      const homeTotal = this.homeScore.reduce((a, b) => a + b, 0);
+      const awayTotal = this.awayScore.reduce((a,b) => a + b ,0);
+
+      return homeTotal > awayTotal ? this.home : this.away;
+    },
+
+    getImgUrl(pic) {
+      return `https://aqueous-spire-90124.herokuapp.com/icons/${pic}.png`;
+    },
+    getArray(arr) {
+      if (!this.havePenalties) {
+        return null;
+      }
+
+      let temp = [...arr];
+      temp.reverse();
+      return temp;
+    },
+    name(code) {
+      return COUNTRIES[code].toUpperCase()
+    },
   }
+}
 </script>
 
 <style scoped>
-  h1, h2 {
-    font-weight: normal;
-  }
-
-  .match {
-    width: 200px;
-    border:1px solid black;
-  }
-
-  .flag, .name, .score {
-    display: inline-block;
-    vertical-align: middle;
-  }
-
-  .flag {
-    width: 40px;
-    padding-top:1px;
-  }
-
-  .score {
-    padding-bottom: 3px;
-    font-size: 18px;
-  }
-
-  .name {
-    width: 130px;
-    padding-bottom: 3px;
-    font-size: 18px;
-  }
-
-  img {
-    width: 32px;
-  }
-
-
-  .match::before {
-    content: '';
-    position: absolute;
-    color: black;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
 
 
 </style>

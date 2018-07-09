@@ -1,29 +1,91 @@
 <template>
-  <div id="app">
-    <Match/>
-  </div>
+  <main id="tournament">
+    <ul class="round round-1">
+    <Match
+      v-for="item in items"
+      v-bind:key="item.id"
+      v-bind:item="item"
+    ></Match>
+  </ul>
+  </main>
 </template>
 
 <script>
 import Match from './components/Match'
-
+import {KO} from './data/data';
 export default {
   name: 'App',
   components: {
     Match
+  },
+  data () {
+    return {
+      items: KO["last16"]
+    }
   }
 }
 </script>
 
 <style>
-* {
-  box-sizing: border-box;
+
+/*
+ *  Flex Layout Specifics
+*/
+main{
+  display:flex;
+  flex-direction:row;
+}
+.round{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  width:200px;
+  list-style:none;
+  padding:0;
+}
+  .round .spacer{ flex-grow:1; }
+  .round .spacer:first-child,
+  .round .spacer:last-child{ flex-grow:.5; }
+
+  .round .game-spacer{
+    flex-grow:1;
+  }
+
+/*
+ *  General Styles
+*/
+body{
+  font-family:sans-serif;
+  padding:10px;
+  line-height:1.4em;
 }
 
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+li.game{
+  padding-left:20px;
 }
+
+  li.game.winner{
+    font-weight:bold;
+  }
+  li.game span{
+    float:right;
+    margin-right:5px;
+  }
+
+  li.game-top{ border-bottom:1px solid #aaa; }
+
+  li.game-spacer{
+    border-right:1px solid #aaa;
+    min-height:40px;
+  }
+
+  li.game-bottom{
+    border-top:1px solid #aaa;
+  }
+
+img {
+  width: 28px;
+  margin-bottom: -2px;
+}
+
 </style>
