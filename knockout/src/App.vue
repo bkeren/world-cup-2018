@@ -1,32 +1,41 @@
 <template>
-  <main id="tournament">
-    <ul class="round round-1">
-    <Match
-      v-for="item in items"
-      v-bind:key="item.id"
-      v-bind:item="item"
-    ></Match>
+<main id="tournament">
+  <ul class="round round-1">
+    <Match v-for="item in items" v-bind:key="item.id" v-bind:item="item"></Match>
   </ul>
-  </main>
+  <ul class="round round-2">
+    <Match v-for="item in qf" v-bind:key="item.id" v-bind:item="item"></Match>
+  </ul>
+  <ul class="round round-3">
+    <Match v-for="item in sf" v-bind:key="item.id" v-bind:item="item"></Match>
+  </ul>
+</main>
 </template>
 
 <script>
 import Match from './components/Match'
-import {KO} from './data/data';
+import {
+  KO
+} from './data/data';
 export default {
   name: 'App',
   components: {
     Match
   },
-  data () {
+  data() {
     return {
-      items: KO["last16"]
+      items: KO["last16"],
+      qf : KO["last8"],
+      sf : KO["last4"]
     }
   }
 }
 </script>
 
 <style>
+/*
+ *  Flex Layout Specifics
+*/
 
 /*
  *  Flex Layout Specifics
@@ -47,6 +56,19 @@ main{
   .round .spacer:first-child,
   .round .spacer:last-child{ flex-grow:.5; }
 
+.round.round-2  , .round.round-3 { justify-content: start;}
+
+.round.round-2 .game-spacer{ min-height: 96px;}
+.round.round-3 .game-spacer{ min-height: 208px;}
+
+.round.round-3 div:first-of-type { margin-top:60px;}
+
+.round.round-2 div:first-of-type { margin-top:20px;}
+
+
+.round.round-2 div { margin-top:40px;}
+.round.round-3 div { margin-top:120px;}
+
   .round .game-spacer{
     flex-grow:1;
   }
@@ -56,6 +78,7 @@ main{
 */
 body{
   font-family:sans-serif;
+  font-size:small;
   padding:10px;
   line-height:1.4em;
 }
