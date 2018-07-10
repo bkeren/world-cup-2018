@@ -64,7 +64,7 @@ export const KO = {
   "last4": [
     {
       id: 13,
-      FRA: 5,
+      FRA: 1,
       BEL: 0
     }, {
       id: 14,
