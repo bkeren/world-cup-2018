@@ -44,11 +44,11 @@ export default {
   },
   methods: {
     winner() {
-      if(typeof(this.homeScore) === 'number')
+      if (typeof(this.homeScore) === 'number')
         return this.homeScore > this.awayScore ? this.home : this.away
 
       const homeTotal = this.homeScore.reduce((a, b) => a + b, 0);
-      const awayTotal = this.awayScore.reduce((a,b) => a + b ,0);
+      const awayTotal = this.awayScore.reduce((a, b) => a + b, 0);
 
       return homeTotal > awayTotal ? this.home : this.away;
     },
@@ -74,5 +74,35 @@ export default {
 
 <style scoped>
 
+li.game {
+  padding-left: 20px;
+}
+
+li.game.winner {
+  font-weight: bold;
+}
+
+li.game span {
+  float: right;
+  margin-right: 5px;
+}
+
+li.game-top {
+  border-bottom: 1px solid #aaa;
+}
+
+li.game-spacer {
+  border-right: 1px solid #aaa;
+  min-height: 40px;
+}
+
+li.game-bottom {
+  border-top: 1px solid #aaa;
+}
+
+img {
+  width: 28px;
+  margin-bottom: -2px;
+}
 
 </style>

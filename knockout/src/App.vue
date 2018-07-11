@@ -1,26 +1,20 @@
 <template>
 <main id="tournament">
-  <ul class="round round-1">
-    <Match v-for="item in items" v-bind:key="item.id" v-bind:item="item"></Match>
-  </ul>
-  <ul class="round round-2">
-    <Match v-for="item in qf" v-bind:key="item.id" v-bind:item="item"></Match>
-  </ul>
-  <ul class="round round-3">
-    <Match v-for="item in sf" v-bind:key="item.id" v-bind:item="item"></Match>
-  </ul>
+  <Round :items="items" title="LAST 16" className="round-1"/>
+  <Round :items="qf" title="QUARTER FINAL" className="round-2"/>
+  <Round :items="sf" title="SEMI FINAL" className="round-3"/>
 </main>
 </template>
 
 <script>
-import Match from './components/Match'
+import Round from './components/Round';
 import {
   KO
 } from './data/data';
 export default {
   name: 'App',
   components: {
-    Match
+    Round
   },
   data() {
     return {
@@ -33,82 +27,46 @@ export default {
 </script>
 
 <style>
-/*
- *  Flex Layout Specifics
-*/
 
-/*
- *  Flex Layout Specifics
-*/
+body {
+  font-family: sans-serif;
+  font-size: small;
+  padding: 10px;
+  line-height: 1.4em;
+}
+
 main{
   display:flex;
   flex-direction:row;
 }
-.round{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  width:200px;
-  list-style:none;
-  padding:0;
-}
-  .round .spacer{ flex-grow:1; }
-  .round .spacer:first-child,
-  .round .spacer:last-child{ flex-grow:.5; }
 
-.round.round-2  , .round.round-3 { justify-content: start;}
-
-.round.round-2 .game-spacer{ min-height: 96px;}
-.round.round-3 .game-spacer{ min-height: 208px;}
-
-.round.round-3 div:first-of-type { margin-top:60px;}
-
-.round.round-2 div:first-of-type { margin-top:20px;}
-
-
-.round.round-2 div { margin-top:40px;}
-.round.round-3 div { margin-top:120px;}
-
-  .round .game-spacer{
-    flex-grow:1;
-  }
-
-/*
- *  General Styles
-*/
-body{
-  font-family:sans-serif;
-  font-size:small;
-  padding:10px;
-  line-height:1.4em;
+.round.round-2,
+.round.round-3 {
+  justify-content: start;
 }
 
-li.game{
-  padding-left:20px;
+.round.round-2 .game-spacer {
+  min-height: 96px;
 }
 
-  li.game.winner{
-    font-weight:bold;
-  }
-  li.game span{
-    float:right;
-    margin-right:5px;
-  }
-
-  li.game-top{ border-bottom:1px solid #aaa; }
-
-  li.game-spacer{
-    border-right:1px solid #aaa;
-    min-height:40px;
-  }
-
-  li.game-bottom{
-    border-top:1px solid #aaa;
-  }
-
-img {
-  width: 28px;
-  margin-bottom: -2px;
+.round.round-3 .game-spacer {
+  min-height: 208px;
 }
 
+.round.round-3 div:first-of-type {
+  margin-top: 60px;
+}
+
+.round.round-2 div:first-of-type {
+  margin-top: 20px;
+}
+
+
+.round.round-2 div {
+  margin-top: 40px;
+}
+
+.round.round-3 div {
+  margin-top: 120px;
+}
 </style>
