@@ -6,4 +6,4 @@ Resulting application can be seen as [Heroku Application](https://aqueous-spire-
 
 - **GROUP STAGE** : Implemented using [React](https://www.reactjs.org)
 
-- **KNOCKOUT STAGE** : Implement using [Vue](https://www.vuejs.org)
+- **KNOCKOUT STAGE** : Implemented using [Vue](https://www.vuejs.org)
