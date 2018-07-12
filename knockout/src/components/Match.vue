@@ -72,37 +72,6 @@ export default {
 }
 </script>
 
-<style scoped>
-
-li.game {
-  padding-left: 20px;
-}
-
-li.game.winner {
-  font-weight: bold;
-}
-
-li.game span {
-  float: right;
-  margin-right: 5px;
-}
-
-li.game-top {
-  border-bottom: 1px solid #aaa;
-}
-
-li.game-spacer {
-  border-right: 1px solid #aaa;
-  min-height: 40px;
-}
-
-li.game-bottom {
-  border-top: 1px solid #aaa;
-}
-
-img {
-  width: 28px;
-  margin-bottom: -2px;
-}
+<style>
 
 </style>
