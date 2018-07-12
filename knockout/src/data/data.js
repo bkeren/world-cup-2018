@@ -68,7 +68,7 @@ export const KO = {
       BEL: 0
     }, {
       id: 14,
-      CRO: 3,
+      CRO: 2,
       ENG: 1
     }
   ]
