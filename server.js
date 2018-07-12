@@ -7,7 +7,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(express.static('public'));
-app.use(express.static(path.join(__dirname , 'client/build')));
+app.use(express.static(path.join(__dirname , 'group/build')));
 app.use(express.static(path.join(__dirname , 'knockout/dist')));
 
 app.get('/wc18' , (req,res) => {
@@ -18,7 +18,7 @@ app.get('/wc18' , (req,res) => {
 });
 
 app.get('/group' , (req,res) => {
-  res.sendFile(path.join(__dirname + '/client/build/index.html'));
+  res.sendFile(path.join(__dirname + '/group/build/index.html'));
 });
 
 app.get('/knockout' , (req , res) => {
