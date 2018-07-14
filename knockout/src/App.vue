@@ -74,7 +74,6 @@ body {
   font-size: small;
   padding: 10px;
   line-height: 1.4em;
-  text-align: center;
 }
 
 .final {
